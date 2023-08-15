@@ -18,7 +18,7 @@ navigate("/login")
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-info ">
         <div className="container-fluid">
           <Link  to="/"><img src={logo} style={{width: 120,height:40}} /></Link>
            

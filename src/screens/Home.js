@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [search, setSearch] = useState('');
@@ -41,13 +42,13 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="carousel-item active">
-                        <img src="https://source.unsplash.com/random/900x700/?burger" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
+                        <img src="https://source.unsplash.com/random/900x700/?grocery" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/900x700/?pastry" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
+                        <img src="https://source.unsplash.com/random/900x700/?furniture" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/900x700/?barbeque" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
+                        <img src="https://source.unsplash.com/random/900x700/?clothes" className="d-block w-100" style={{filter:"brightness(40%)"}} alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -64,9 +65,10 @@ export default function Home() {
         {
           foodCat !== []
             ? foodCat.map((data) => {
+              var check="/"+data.CategoryName;
               return (<div className='row mb-3'>
                 <div key={data._id} className='fs-3 m-3'>
-                  {data.CategoryName}
+                 <Link className="nav-link active fs-8 text-info" aria-current="page" to={check} >{data.CategoryName}</Link> 
                 </div>
                 <hr />
                 {foodItem !== []

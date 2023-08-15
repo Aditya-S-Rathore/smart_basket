@@ -42,20 +42,20 @@ useEffect(()=>{
 },[])
     return (
         <div> <div>
-            <div className="card mt-2 " style={{ "width": "20rem", "maxHeight": "390px" }}>
-                <img src={props.foodItem.img} className='card-img-top' alt='...'  style={{height:"120px",objectFit:"fill"}} />
+            <div className="card mt-2 " style={{ "width": "20rem", "maxHeight": "550px" }}>
+                <img src={props.foodItem.img} className='card-img-top' alt='...'  style={{height:"250px",objectFit:"fill"}} />
                 <div className="card-body">
                     <h5 className="card-title">{props.foodItem.name}</h5>
                     <p className="card-text">{props.foodItem.description} </p>
                     <div className="container w-100">
-                        <select className="m-2 h-100  bg-success rounded" onChange={(e)=> setQty(e.target.value)}>
+                        <select className="m-2 h-100  bg-info rounded" onChange={(e)=> setQty(e.target.value)}>
                             {Array.from(Array(6), (e, i) => {
                                 return (
                                     <option key={i + 1} value={i + 1}>{i + 1}</option>
                                 )
                             })}
                         </select>
-                        <select className="m-2 h-100  bg-success rounded" ref={priceRef} onChange={(e)=> setSize(e.target.value)}>
+                        <select className="m-2 h-100  bg-info rounded" ref={priceRef} onChange={(e)=> setSize(e.target.value)}>
                            {priceOptions.map((data)=>{
                             return <option key={data} value={data}>{data}</option>
                            })}
@@ -66,7 +66,7 @@ useEffect(()=>{
                     </div>
                     <hr>
                     </hr>
-                    <button className={'btn btn-success justify-center ms-2'} onClick={handleAddToCart}>Add to Cart</button>
+                    <button className={'btn btn-info justify-center ms-2'} onClick={handleAddToCart}>Add to Cart</button>
                 </div>
             </div>
         </div>
